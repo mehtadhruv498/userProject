@@ -2,20 +2,10 @@ package config
 
 import (
 	"fmt"
-	"log"
 
-	"github.com/joho/godotenv"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 )
-
-func LoadEnvVariables() {
-	err := godotenv.Load()
-
-	if err != nil {
-		log.Fatal("Error loading env file")
-	}
-}
 
 var DB *gorm.DB
 
