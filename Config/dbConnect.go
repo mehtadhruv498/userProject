@@ -1,6 +1,7 @@
 package config
 
 import (
+	Model "example/userProject/pkg/userAuth/model"
 	"fmt"
 
 	"gorm.io/driver/mysql"
@@ -20,6 +21,7 @@ func ConnectToDB() {
 	if err != nil {
 		panic("Failed to get underlying *sql.DB")
 	}
+	DB.AutoMigrate(&Model.UserInput{})
 	DB.AutoMigrate()
 	fmt.Println("DB connected at: ", sqlDB)
 }

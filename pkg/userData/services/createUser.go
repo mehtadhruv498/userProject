@@ -10,5 +10,6 @@ func CreateUser(user *Model.User) (err error) {
 		return err
 	}
 	return nil
+	
 }
 
