@@ -18,22 +18,16 @@ import (
 // @Success      200 {string} string "Updated User Successfully"
 // @Router       /api/v1/users/:id [put]
 func UpdateUser(req *gin.Context) {
-	var task Model.User
+	var user Model.User
 
 	id := req.Params.ByName("id")
 
-	err := services.GetOneUser(&task, id)
-
-	if err != nil {
-		req.JSON(http.StatusNotFound, task)
-	}
-
-	req.BindJSON(&task)
-	err = services.UpdateUser(&task)
+	req.BindJSON(&user)
+	err := services.UpdateUser(&user, id)
 
 	if err != nil {
 		req.AbortWithStatus(http.StatusBadRequest)
 	} else {
-		req.JSON(http.StatusOK, task)
+		req.JSON(http.StatusOK, user)
 	}
 }

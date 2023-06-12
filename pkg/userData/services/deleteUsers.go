@@ -1,12 +1,19 @@
 package services
 
 import (
-	config "example/userProject/Config"
 	Model "example/userProject/pkg/userData/Models"
+	"example/userProject/pkg/userData/store"
 )
 
 func DeleteUser(user *Model.User, id string) (err error) {
-	config.DB.Where("id = ?", id).Delete(user)
+	err = store.GetOneUser(user,id)
 
+	if err != nil {
+		return err
+	}
+	err = store.DeleteUser(user, id)
+	if err != nil {
+		return err
+	}
 	return nil
 }

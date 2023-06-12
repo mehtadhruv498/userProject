@@ -1,14 +1,15 @@
 package services
 
 import (
-	config "example/userProject/Config"
 	Model "example/userProject/pkg/userData/Models"
+	"example/userProject/pkg/userData/store"
 )
 
-func GetAllUsers(user *[]Model.User) (err error) {
-	if err = config.DB.Find(user).Error; err != nil {
+func GetAllUsers(users *[]Model.User) (err error) {
+
+	err = store.GetAllUsers(users)
+	if err != nil {
 		return err
 	}
-
 	return nil
 }
