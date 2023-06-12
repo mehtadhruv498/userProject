@@ -8,10 +8,18 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// CreateUser godoc
+// @Summary      Create a User
+// @Description  Create a new user
+// @Tags         users
+// @Accept       json
+// @Produce      json
+// @Param        user body Model.User true "User"
+// @Success      200 {string} string "Created User Successfully"
+// @Router       /api/v1/users [post]
 func CreateUser(req *gin.Context) {
 	var user Model.User
 
-	// Bind the request body to the user struct
 	if err := req.ShouldBindJSON(&user); err != nil {
 		req.JSON(http.StatusBadRequest, gin.H{"error": err.Error()})
 		return

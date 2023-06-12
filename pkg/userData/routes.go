@@ -7,11 +7,14 @@ import (
 	"example/userProject/pkg/userAuth/middleware"
 
 	"github.com/gin-gonic/gin"
+	swaggerFiles "github.com/swaggo/files"
+	ginSwagger "github.com/swaggo/gin-swagger"
 )
 
 // Routes function to serve endpoints
 func SetupRouter() *gin.Engine {
 	router := gin.Default()
+	router.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
 	public := router.Group("/api")
 	public.POST("/register", handler.Signup)
 	public.POST("/login", handler.Login)
