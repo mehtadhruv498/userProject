@@ -5,8 +5,8 @@ import (
 	Model "example/userProject/pkg/userData/Models"
 )
 
-func DeleteUser(task *Model.User, id string) (err error) {
-	config.DB.Where("id = ?", id).Delete(task)
+func DeleteUser(user *Model.User, id string) (err error) {
+	config.DB.Where("id = ?", id).Delete(user)
 
 	return nil
 }
