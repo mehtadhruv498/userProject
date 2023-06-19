@@ -1,12 +1,12 @@
 package main
 
 import (
-	config "example/userProject/Config"
+	config "example/userproject/Config"
 	"fmt"
 
 	//"github.com/gin-gonic/gin"
-	routes "example/userProject/pkg/userData"
-	Model "example/userProject/pkg/userData/Models"
+	routes "example/userproject/pkg/userData"
+	Model "example/userproject/pkg/userData/Models"
 )
 
 func init() {

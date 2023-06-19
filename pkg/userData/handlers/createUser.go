@@ -1,8 +1,8 @@
 package handlers
 
 import (
-	Model "example/userProject/pkg/userData/Models"
-	"example/userProject/pkg/userData/services"
+	Model "example/userproject/pkg/userData/Models"
+	"example/userproject/pkg/userData/services"
 	"net/http"
 
 	"github.com/gin-gonic/gin"

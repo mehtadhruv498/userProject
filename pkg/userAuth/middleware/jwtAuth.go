@@ -1,8 +1,8 @@
 package middleware
 
 import (
-	config "example/userProject/Config"
-	Model "example/userProject/pkg/userAuth/model"
+	config "example/userproject/Config"
+	Model "example/userproject/pkg/userAuth/model"
 	"fmt"
 	"net/http"
 	"os"
@@ -53,7 +53,7 @@ func RequireAuth(c *gin.Context) {
 
 		//CONTINUE
 		c.Next()
-		fmt.Println(claims["foo"], claims["nbf"])
+		//fmt.Println(claims["foo"], claims["nbf"])
 	} else {
 		c.AbortWithStatus(http.StatusUnauthorized)
 	}

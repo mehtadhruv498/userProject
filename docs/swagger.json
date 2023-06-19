@@ -9,7 +9,7 @@
     "host": "localhost:3000",
     "basePath": "/",
     "paths": {
-        "/api/v1/users": {
+        "/api/v1/user": {
             "get": {
                 "description": "Retrieves a list of all users",
                 "consumes": [
@@ -28,7 +28,7 @@
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/example_userProject_pkg_userData_Models.User"
+                                "$ref": "#/definitions/example_userproject_pkg_userData_Models.User"
                             }
                         }
                     }
@@ -53,7 +53,7 @@
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/example_userProject_pkg_userData_Models.User"
+                            "$ref": "#/definitions/example_userproject_pkg_userData_Models.User"
                         }
                     }
                 ],
@@ -67,7 +67,7 @@
                 }
             }
         },
-        "/api/v1/users/:id": {
+        "/api/v1/user/{id}": {
             "get": {
                 "description": "Gets details of a particular user",
                 "consumes": [
@@ -95,7 +95,7 @@
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/example_userProject_pkg_userData_Models.User"
+                                "$ref": "#/definitions/example_userproject_pkg_userData_Models.User"
                             }
                         }
                     }
@@ -164,7 +164,7 @@
         }
     },
     "definitions": {
-        "example_userProject_pkg_userData_Models.User": {
+        "example_userproject_pkg_userData_Models.User": {
             "type": "object",
             "properties": {
                 "address": {

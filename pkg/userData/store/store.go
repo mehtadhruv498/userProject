@@ -1,9 +1,17 @@
 package store
 
 import (
-	config "example/userProject/Config"
-	Model "example/userProject/pkg/userData/Models"
+	config "example/userproject/Config"
+	Model "example/userproject/pkg/userData/Models"
 )
+
+type Store interface {
+	CreateUser(user Model.User) error
+	UpdateUser(initialUser, updatedUser Model.User) error
+	GetAllUsers() (error, []Model.User)
+	GetOneUser(id int) (error, Model.User)
+	DeleteUser(id int) error
+}
 
 func CreateUser(user *Model.User) (err error) {
 	if err = config.DB.Create(user).Error; err != nil {

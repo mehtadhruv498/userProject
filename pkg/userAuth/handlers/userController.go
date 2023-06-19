@@ -1,8 +1,8 @@
 package handler
 
 import (
-	config "example/userProject/Config"
-	Model "example/userProject/pkg/userAuth/model"
+	config "example/userproject/Config"
+	Model "example/userproject/pkg/userAuth/model"
 	"net/http"
 	"os"
 	"time"
@@ -13,11 +13,8 @@ import (
 )
 
 func Signup(c *gin.Context) {
-	//GET THE EMAIL & PASSWORD FROM REQUEST
-	var body struct {
-		Username string
-		Password string
-	}
+	
+	var body Model.UserInput
 
 	if c.Bind(&body) != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
@@ -52,11 +49,8 @@ func Signup(c *gin.Context) {
 }
 
 func Login(c *gin.Context) {
-	//Get the email and password from the request
-	var body struct {
-		Username string
-		Password string
-	}
+
+	var body Model.UserInput
 
 	if c.Bind(&body) != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
@@ -100,19 +94,9 @@ func Login(c *gin.Context) {
 		})
 		return
 	}
-
-	//send token
-	// c.SetSameSite(http.SameSiteLaxMode)
-	// c.SetCookie("Authorization", tokenString, 3600*24*30, "","", false, true)
 	c.JSON(http.StatusOK, gin.H{
 		"token": tokenString,
 	})
 }
 
-func Validate(c *gin.Context) {
-	user, _ := c.Get("user")
 
-	c.JSON(http.StatusOK, gin.H{
-		"Details of the User": user,
-	})
-}

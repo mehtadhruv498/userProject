@@ -1,6 +1,6 @@
 basePath: /
 definitions:
-  example_userProject_pkg_userData_Models.User:
+  example_userproject_pkg_userData_Models.User:
     properties:
       address:
         type: string
@@ -22,7 +22,7 @@ info:
   title: Go + Gin + Gorm User API
   version: "1.0"
 paths:
-  /api/v1/users:
+  /api/v1/user:
     get:
       consumes:
       - application/json
@@ -34,7 +34,7 @@ paths:
           description: OK
           schema:
             items:
-              $ref: '#/definitions/example_userProject_pkg_userData_Models.User'
+              $ref: '#/definitions/example_userproject_pkg_userData_Models.User'
             type: array
       summary: Get all users
       tags:
@@ -49,7 +49,7 @@ paths:
         name: user
         required: true
         schema:
-          $ref: '#/definitions/example_userProject_pkg_userData_Models.User'
+          $ref: '#/definitions/example_userproject_pkg_userData_Models.User'
       produces:
       - application/json
       responses:
@@ -60,7 +60,7 @@ paths:
       summary: Create a User
       tags:
       - users
-  /api/v1/users/:id:
+  /api/v1/user/{id}:
     delete:
       consumes:
       - application/json
@@ -98,7 +98,7 @@ paths:
           description: OK
           schema:
             items:
-              $ref: '#/definitions/example_userProject_pkg_userData_Models.User'
+              $ref: '#/definitions/example_userproject_pkg_userData_Models.User'
             type: array
       summary: Get a particluar user
       tags:

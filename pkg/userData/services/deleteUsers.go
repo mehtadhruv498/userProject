@@ -1,12 +1,12 @@
 package services
 
 import (
-	Model "example/userProject/pkg/userData/Models"
-	"example/userProject/pkg/userData/store"
+	Model "example/userproject/pkg/userData/Models"
+	"example/userproject/pkg/userData/store"
 )
 
 func DeleteUser(user *Model.User, id string) (err error) {
-	err = store.GetOneUser(user,id)
+	err = store.GetOneUser(user, id)
 
 	if err != nil {
 		return err

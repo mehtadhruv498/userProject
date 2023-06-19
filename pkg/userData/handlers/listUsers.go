@@ -1,8 +1,8 @@
 package handlers
 
 import (
-	Model "example/userProject/pkg/userData/Models"
-	"example/userProject/pkg/userData/services"
+	Model "example/userproject/pkg/userData/Models"
+	"example/userproject/pkg/userData/services"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -17,7 +17,7 @@ import (
 // @Accept json
 // @Produce json
 // @Success 200 {array} Model.User
-// @Router /api/v1/users [get]
+// @Router /api/v1/user [get]
 func GetAllUsers(req *gin.Context) {
 	var tasks []Model.User
 

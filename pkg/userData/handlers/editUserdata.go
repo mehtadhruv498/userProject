@@ -1,8 +1,8 @@
 package handlers
 
 import (
-	Model "example/userProject/pkg/userData/Models"
-	"example/userProject/pkg/userData/services"
+	Model "example/userproject/pkg/userData/Models"
+	"example/userproject/pkg/userData/services"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -14,9 +14,9 @@ import (
 // @Tags         users
 // @Accept       json
 // @Produce      json
-// @Param id path string true "User ID"
+// @Param        user body Model.User true "User"
 // @Success      200 {string} string "Updated User Successfully"
-// @Router       /api/v1/users/:id [put]
+// @Router       /api/v1/user/{id} [put]
 func UpdateUser(req *gin.Context) {
 	var user Model.User
 
@@ -27,7 +27,7 @@ func UpdateUser(req *gin.Context) {
 
 	if err != nil {
 		req.AbortWithStatus(http.StatusBadRequest)
-	} else {
-		req.JSON(http.StatusOK, user)
+		return
 	}
+	req.JSON(http.StatusOK, user)
 }

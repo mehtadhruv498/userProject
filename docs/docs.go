@@ -16,7 +16,7 @@ const docTemplate = `{
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
     "paths": {
-        "/api/v1/users": {
+        "/api/v1/user": {
             "get": {
                 "description": "Retrieves a list of all users",
                 "consumes": [
@@ -35,7 +35,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/example_userProject_pkg_userData_Models.User"
+                                "$ref": "#/definitions/example_userproject_pkg_userData_Models.User"
                             }
                         }
                     }
@@ -60,7 +60,7 @@ const docTemplate = `{
                         "in": "body",
                         "required": true,
                         "schema": {
-                            "$ref": "#/definitions/example_userProject_pkg_userData_Models.User"
+                            "$ref": "#/definitions/example_userproject_pkg_userData_Models.User"
                         }
                     }
                 ],
@@ -74,7 +74,7 @@ const docTemplate = `{
                 }
             }
         },
-        "/api/v1/users/:id": {
+        "/api/v1/user/{id}": {
             "get": {
                 "description": "Gets details of a particular user",
                 "consumes": [
@@ -102,7 +102,7 @@ const docTemplate = `{
                         "schema": {
                             "type": "array",
                             "items": {
-                                "$ref": "#/definitions/example_userProject_pkg_userData_Models.User"
+                                "$ref": "#/definitions/example_userproject_pkg_userData_Models.User"
                             }
                         }
                     }
@@ -171,7 +171,7 @@ const docTemplate = `{
         }
     },
     "definitions": {
-        "example_userProject_pkg_userData_Models.User": {
+        "example_userproject_pkg_userData_Models.User": {
             "type": "object",
             "properties": {
                 "address": {

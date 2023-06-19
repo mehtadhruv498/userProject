@@ -1,9 +1,9 @@
 package services
 
 import (
-	"example/userProject/pkg/userData/store"
+	"example/userproject/pkg/userData/store"
 
-	Model "example/userProject/pkg/userData/Models"
+	Model "example/userproject/pkg/userData/Models"
 )
 
 func GetOneUser(user *Model.User, id string) (err error) {
